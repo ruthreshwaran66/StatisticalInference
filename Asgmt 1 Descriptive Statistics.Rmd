@@ -1,0 +1,152 @@
+---
+title: '1.1 Descriptive Statistics: Central Tendency and Measures of Dispersion'
+author: "RUTHRESHWARAN M"
+date: "2023-02-15"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+---
+"Central Tendency and Measures of dispersion"
+- Examines one variable at a time.
+
+
+1. Import .sav file into RStudio
+
+```{r}
+library(tidyverse)
+library(haven)
+rd<-read_sav("Raw/chap3data.sav")
+rd
+
+```
+
+Measures of Central Tendency: Focuses on the center of a distribution / looks inward.
+
+Mean : relevant for ordinal and scale level variables
+
+2. Print the values of the zadm_tot variable in the given data set and write your understanding about the type of variable.
+
+```{r}
+rd$zadm_tot
+
+```
+THis is a Scalable Variable.
+
+3. Calculate the mean for the values of zadm_tot as it is and observe the output.
+
+```{r}
+mean(rd$zadm_tot)
+```
+
+
+4. Remove the missing values values from the zadm_tot and then calculate the mean.
+
+```{r}
+rwd<-rd%>%filter(zadm_tot>=0)
+mean(rwd$zadm_tot)
+```
+
+Median: relevant for ordinal and scale level variables
+
+
+5. Calculate Mean & Median for some variable in the data set and check whether replacing 0 for missing values makes sense.
+
+
+```{r}
+
+```
+
+6. Calculate the Mean & Median for the above variable (after filtering NA)
+
+```{r}
+
+
+```
+
+Mode: most suitable even for nominal variables.
+
+
+Frequency Table:
+
+7. Create the frequency table for the variable kactivm1
+```{r}
+frequency_table<-table(rd$kactivm1)
+frequency_table
+
+```
+
+Cumulative Frequency Table:
+
+8. Create the cumulative frequency table for kactivm1.
+
+```{r}
+cumsum(frequency_table)
+
+```
+
+Relative Frequency Table: 
+
+9. Create the relative frequency table for kactivm1.
+
+```{r}
+prop.table(frequency_table)
+
+```
+
+
+R doesn't have the inbuilt mode function. So here we write a user defined function for mode. 
+
+10. Calculate the mode for kactivm1.
+
+```{r}
+calc_mode<-function(ds1){
+  uniqds1<-unique(ds1)
+  uniqds1[which.max(tabulate(match(ds1,uniqds1)))]
+}
+calc_mode(rd$kactivm1)
+
+```
+
+
+Measures of Dispersion: focuses on the amount of "spread" across a distribution / looks outward. It is irrelevant for nominal variables.
+
+Range and Standard Deviation: relevant for ordinal and scale level variables
+Range: max value - min value
+
+Standard Deviation: Average Variability. It takes into account every single observation and its relationship with the mean.
+
+11. Calculate the standard deviation for the variable ztotmen.
+```{r}
+sd(rd$ztotmen)
+
+
+```
+
+12. Calculate the summary statistics for the variable ztotmen.
+```{r}
+
+summary(rd$ztotmen)
+```
+
+13. Calculate the descriptive statistics using describe function for ztotmen.
+
+
+```{r}
+library(psych)
+describe(rd$ztotmen)
+
+```
+
+14. Write your interpretation/understanding about the above analysis.
+
+     
+
+
+
+
+
+
+
+
+

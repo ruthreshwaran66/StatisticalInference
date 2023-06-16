@@ -1,0 +1,145 @@
+---
+title: "1.2 Descriptive Statistics & Graphs"
+author: "SY"
+date: "2023-02-15"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+
+"Frequency Distributions, Skewness and Kurtosis, Histogram, Pie Chart & Bar Chart" - Examines one variable at a time.
+
+
+
+Initial Configurations
+
+1. Import .sav file into RStudio
+
+```{r}
+
+```
+
+Frequency Distributions and Histograms:
+
+2. Create a histogram for the values of the variable ztotmen 
+
+```{r}
+
+```
+
+Histogram with no. of bins changed using breaks.
+
+
+```{r}
+
+```
+
+
+3. Calculate the mean and median for ztotmen
+
+```{r}
+
+```
+
+
+4. Describe the variable ztotmen
+
+```{r}
+
+```
+
+5. Create a histogram for ztotmen and mark the mean and median in that.
+
+```{r}
+
+
+```
+
+
+Histogram for Subset of Data:
+
+
+6. Create the histogram for the subsetted data of ztotmen less than 200.
+
+```{r}
+
+
+
+```
+
+
+Skewness and Kurtosis: 
+These are about the overall shape of an ordinal or scale level variables. It is irrelevant for nominal variables.
+
+
+7. Create a histogram for zallpte
+
+
+```{r}
+
+
+```
+
+To determine whether the skewness and kurtosis levels are excessively problematic, there are couple of ways.
+
+- Cutoff of +-0.700 (If the skewness and Kurtosis is greater than 0.700 or less than -0.700 then they are unacceptable / problematic)
+
+-  Skewness statistic divided by the standard error of the skewness statistic and
+Kurtosis statistic divided by the standard error of the kurtosis statistic. If the resultant numbers are beyond +-1.96 then we can assume that the distribution suffers from "significant" skewness and/or kurtosis.
+
+Thus, here the variable "how long this workplace is in operation" is said to be excessively positively skewed and leptokurtic.
+
+
+Bar Charts and Pie Charts:
+
+8. Create a pie chart for kactivm1
+
+8.1 Remove the NA values from kactivm1
+
+8.2 Convert that into data frame
+
+8.3 Describe the variable kactivm1 after removing NA values.
+
+8.4 Create the frequency and cumulative frequency table for kactivm1
+
+
+8.5 Create a pie chart for kactivm1 with those values.
+
+```{r}
+
+
+```
+
+9. Create a barplot for kactivm1
+
+```{r}
+
+```
+
+
+It is good to spend some time for "getting to know" our data and variables. We should always request frequency distributions and histograms for every single variable we plan to model: nominal, ordinal & scale. Have a look at how the responses are distributed and what the distributions look like graphically. 
+
+Then only for our ordinal and scale-level variables, we have to ask for parametric statistics.
+
+"Parametric statistics" are those statistics for which the mean and standard deviation are relevant.
+
+"Nonparametric statistics" are reserved for the analysis of nominal variables where the mean and standard deviation are not at all meaningful statistics. 
+
+The relevant parametric statistics we should request for ordinal and scale-level variables include the mean, median, standard deviation, minimum, maximum, range, skewness, and kurtosis. 
+The only nonparametric statistic we really need to look at for nominal variables is the mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
